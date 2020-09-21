@@ -6,14 +6,13 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Pojo</title>
+<title>Risultato della somma</title>
 <c:url var="webjars" value="/webjars" />
 <link rel="stylesheet" href="${ webjars }/bootstrap/4.4.1/css/bootstrap.css" type="text/css">
 </head>
 <body>
 	<div class="container">
-		<h1>POJO</h1>
-		<p>La rivincita del POJO.
+	La somma di ${ sumResponse.left } e ${ sumResponse.right } è ${ sumResponse.sum }.
 	</div>
 	<script type="text/javascript" src="${ webjars }/jquery/3.4.1/jquery.js"></script>
 	<script type="text/javascript" src="${ webjars }/popper.js/1.14.7/popper.js"></script>

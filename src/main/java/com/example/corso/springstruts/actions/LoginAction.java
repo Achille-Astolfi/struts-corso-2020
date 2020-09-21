@@ -13,6 +13,7 @@ public class LoginAction extends ActionSupport {
 	public String execute() {
 		if (loginForm == null) {
 			loginForm = new LoginForm();
+			loginForm.setRememberMe(true);
 			return Action.INPUT;
 		} else {
 			return Action.SUCCESS;
