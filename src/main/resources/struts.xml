@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.action.excludePattern"
+		value="/webjars/*,/static/*,/struts/*" />
+	<constant name="struts.devMode" value="true" />
+	<package name="struts-corso-2020" extends="struts-default">
+		<action name="index.jsp">
+			<result>/WEB-INF/content/index.jsp</result>
+		</action>
+		<action name="dashboard"
+			class="com.example.corso.springstruts.actions.DashboardAction"
+			method="execute">
+			<result>/WEB-INF/content/dashboard.jsp</result>
+		</action>
+		<action name="pojo"
+			class="com.example.corso.springstruts.actions.PojoAction"
+			method="execute">
+			<result>/WEB-INF/content/pojo.jsp</result>
+		</action>
+	</package>
+</struts>
