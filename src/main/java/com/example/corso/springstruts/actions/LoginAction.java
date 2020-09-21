@@ -1,6 +1,11 @@
 package com.example.corso.springstruts.actions;
 
+import java.util.Set;
+
 import javax.inject.Inject;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
 
 import org.springframework.util.StringUtils;
 
@@ -12,7 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Inject
 	private LoginService loginService;
 
@@ -40,6 +45,16 @@ public class LoginAction extends ActionSupport {
 
 	@Override
 	public void validate() {
+		// snippet di codice per usare Hibernate Validator BEGIN
+		Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+		Set<ConstraintViolation<LoginForm>> errors = validator.validate(loginForm);
+		for (ConstraintViolation<LoginForm> error : errors) {
+			// Il valore di error.getPropertyPath() dovrebbe essere loginForm.password
+			// oppure solamente password
+			// Il valore di error.getMessage() è il messaggio
+		}
+		// snippet di codice per usare Hibernate Validator END
+
 		if (!StringUtils.hasText(loginForm.getEmailAddress())) {
 			this.addFieldError("loginForm.emailAddress", "Digita la tua username.");
 		}
