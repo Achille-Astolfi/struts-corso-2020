@@ -11,7 +11,7 @@ import com.example.corso.springstruts.service.LoginService;
 public class LoginServiceImpl implements LoginService {
 	@Override
 	public String login(String username, String password) {
-		if (!Objects.deepEquals("password", "nttdata0") || !StringUtils.hasText(username)) {
+		if (!Objects.equals(password, "nttdata0") || !StringUtils.hasText(username)) {
 			return null;
 		} else {
 			username = username.trim();

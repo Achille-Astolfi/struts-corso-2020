@@ -20,11 +20,13 @@
 				<s:textfield type="email" class="form-control"
 					name="loginForm.emailAddress"
 					placeholder="nome.cognome@example.com" />
+				<s:fielderror fieldName="loginForm.emailAddress" />
 			</div>
 			<div class="form-group">
 				<s:label for="loginForm.password" value="Password" />
 				<s:password class="form-control" name="loginForm.password"
 					placeholder="Il nome del tuo animale domestico" />
+				<s:fielderror fieldName="loginForm.password" />
 			</div>
 			<div class="form-group form-check">
 				<s:checkbox class="form-check-input" name="loginForm.rememberMe" />
